@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐潮国际KTV | U86娱乐综合盘 | 上网认证</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #FFD700;
+            --secondary-gold: #FFC400;
+            --deep-purple: #0F0521;
+            --mid-purple: #1E0B3A;
+            --light-purple: #3A1F7A;
+            --neon-blue: #00D4FF;
+            --neon-pink: #FF00AA;
+            --text-light: #F0F0FF;
+            --text-gray: #B0B0D0;
+            --glass-bg: rgba(30, 15, 60, 0.25);
+            --glass-border: rgba(255, 215, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', 'Orbitron', sans-serif;
+            background-color: var(--deep-purple);
+            color: var(--text-light);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        /* 高级动态背景 */
+        .luxury-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            overflow: hidden;
+        }
+        
+        .bg-gradient-luxe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 15% 20%, rgba(255, 0, 170, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 85% 30%, rgba(0, 212, 255, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 50% 80%, rgba(255, 215, 0, 0.2) 0%, transparent 40%),
+                linear-gradient(145deg, #0A0418 0%, #1C0A35 30%, #0A0418 70%);
+            opacity: 0.95;
+        }
+        
+        .holographic-line {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), var(--neon-pink), transparent);
+            filter: blur(1px);
+            opacity: 0.6;
+            animation: lineMove 10s infinite linear;
+        }
+        
+        @keyframes lineMove {
+            0% { transform: translateX(-100%) translateY(0); }
+            100% { transform: translateX(100%) translateY(100vh); }
+        }
+        
+        .floating-crystal {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.1) 50%, transparent 70%);
+            border-radius: 20px;
+            transform: rotate(45deg);
+            animation: crystalFloat 20s infinite ease-in-out;
+            filter: blur(1px);
+        }
+        
+        @keyframes crystalFloat {
+            0%, 100% { transform: rotate(45deg) translateY(0) scale(1); }
+            50% { transform: rotate(45deg) translateY(-30px) scale(1.1); }
+        }
+        
+        .particle-field {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .spark {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: var(--primary-gold);
+            box-shadow: 0 0 10px 2px var(--primary-gold);
+            animation: sparkle 2s infinite alternate;
+        }
+        
+        @keyframes sparkle {
+            0% { opacity: 0.1; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        /* 玻璃态效果 */
+        .glass-effect {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        /* 霓虹文字效果 */
+        .neon-text {
+            color: var(--primary-gold);
+            text-shadow: 
+                0 0 5px var(--primary-gold),
+                0 0 10px rgba(255, 215, 0, 0.5),
+                0 0 20px rgba(255, 215, 0, 0.3);
+            font-weight: 900;
+        }
+        
+        .neon-blue {
+            color: var(--neon-blue);
+            text-shadow: 
+                0 0 5px var(--neon-blue),
+                0 0 15px rgba(0, 212, 255, 0.5);
+        }
+        
+        .neon-pink {
+            color: var(--neon-pink);
+            text-shadow: 
+                0 0 5px var(--neon-pink),
+                0 0 15px rgba(255, 0, 170, 0.5);
+        }
+        
+        /* 主容器 */
+        .luxury-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* 顶部区域 */
+        .luxury-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            position: relative;
+        }
+        
+        .luxury-header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+        }
+        
+        .brand-area {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .brand-icon {
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle, var(--primary-gold) 30%, transparent 70%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: iconPulse 3s infinite alternate;
+        }
+        
+        .brand-icon i {
+            font-size: 2.5rem;
+            color: #000;
+            z-index: 2;
+        }
+        
+        @keyframes iconPulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            100% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+        }
+        
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .luxury-title {
+            font-size: 3.2rem;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--primary-gold), var(--secondary-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 3px;
+            line-height: 1.1;
+            margin-bottom: 5px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .luxury-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--neon-blue);
+            font-weight: 500;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            font-weight: 600;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #FF4D4D;
+            animation: statusPulse 2s infinite;
+        }
+        
+        .status-indicator.connected {
+            background-color: #00FF7F;
+            animation: statusPulse 2s infinite;
+        }
+        
+        @keyframes statusPulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 127, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 127, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 127, 0); }
+        }
+        
+        /* 主要内容区域 */
+        .luxury-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 1100px) {
+            .luxury-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 认证交互区域 */
+        .auth-interactive {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        /* 二维码区域 */
+        .qr-luxury {
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .qr-luxury::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.05), transparent);
+            z-index: -1;
+        }
+        
+        .qr-title-main {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+        
+        .qr-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .qr-display {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 30px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 3px solid var(--primary-gold);
+            background-color: #fff;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+        
+        .qr-display:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.3);
+        }
+        
+        .qr-pattern {
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 30% 30%, #000 10px, transparent 10px),
+                radial-gradient(circle at 70% 30%, #000 10px, transparent 10px),
+                radial-gradient(circle at 30% 70%, #000 10px, transparent 10px),
+                radial-gradient(circle at 70% 70%, #000 10px, transparent 10px),
+                repeating-linear-gradient(45deg, transparent, transparent 10px, #000 10px, #000 11px),
+                repeating-linear-gradient(-45deg, transparent, transparent 10px, #000 10px, #000 11px);
+            background-color: #fff;
+            position: relative;
+        }
+        
+        .qr-overlay-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary-gold);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 5px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .qr-display:hover .qr-overlay-text {
+            opacity: 1;
+        }
+        
+        .qr-instruction {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        /* 一键认证按钮 */
+        .auth-luxury {
+            text-align: center;
+            position: relative;
+        }
+        
+        .auth-button-luxury {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+            color: #000;
+            border: none;
+            border-radius: 15px;
+            padding: 25px 60px;
+            font-size: 1.7rem;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 
+                0 10px 30px rgba(255, 215, 0, 0.4),
+                0 0 0 1px rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            min-width: 350px;
+            z-index: 2;
+        }
+        
+        .auth-button-luxury::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-gold), var(--neon-blue), var(--neon-pink), var(--primary-gold));
+            background-size: 400% 400%;
+            border-radius: 17px;
+            z-index: -1;
+            animation: buttonGlow 3s ease infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .auth-button-luxury:hover::before {
+            opacity: 1;
+        }
+        
+        .auth-button-luxury:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 20px 40px rgba(255, 215, 0, 0.6),
+                0 0 0 2px rgba(255, 215, 0, 0.3);
+        }
+        
+        .auth-button-luxury:active {
+            transform: translateY(-4px);
+        }
+        
+        @keyframes buttonGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .button-icon {
+            font-size: 2rem;
+        }
+        
+        .button-note {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        
+        /* 信息展示区域 */
+        .info-luxury {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .info-luxury {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .info-card-luxury {
+            padding: 30px;
+            position: relative;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        
+        .info-card-luxury:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .card-header-luxury {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .card-icon-luxury {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .card-icon-luxury i {
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+        }
+        
+        .card-title-luxury {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            letter-spacing: 1px;
+        }
+        
+        .card-content-luxury {
+            line-height: 1.7;
+        }
+        
+        .bonus-item-luxury {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .bonus-item-luxury:last-child {
+            border-bottom: none;
+        }
+        
+        .bonus-value-luxury {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+        }
+        
+        .game-list-luxury, .partner-list-luxury {
+            list-style: none;
+        }
+        
+        .game-list-luxury li, .partner-list-luxury li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            padding-left: 25px;
+            font-weight: 500;
+        }
+        
+        .game-list-luxury li:before, .partner-list-luxury li:before {
+            content: '▶';
+            color: var(--neon-blue);
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+        
+        .game-list-luxury li:last-child, .partner-list-luxury li:last-child {
+            border-bottom: none;
+        }
+        
+        .security-feature-luxury {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+        
+        .security-icon-luxury {
+            color: var(--neon-blue);
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+        
+        .note-text-luxury {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            font-style: italic;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* 底部区域 */
+        .luxury-footer {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            font-weight: 400;
+            position: relative;
+        }
+        
+        .luxury-footer::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+        }
+        
+        .footer-links-luxury {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links-luxury a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .footer-links-luxury a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--primary-gold);
+            transition: width 0.3s;
+        }
+        
+        .footer-links-luxury a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .footer-links-luxury a:hover::after {
+            width: 100%;
+        }
+        
+        .copyright {
+            margin-top: 10px;
+            color: var(--text-gray);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 992px) {
+            .luxury-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+            }
+            
+            .status-badge {
+                align-self: flex-start;
+            }
+            
+            .luxury-title {
+                font-size: 2.5rem;
+            }
+            
+            .luxury-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .auth-button-luxury {
+                padding: 22px 50px;
+                font-size: 1.5rem;
+                min-width: 300px;
+            }
+            
+            .qr-display {
+                width: 240px;
+                height: 240px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .luxury-container {
+                padding: 20px;
+            }
+            
+            .luxury-title {
+                font-size: 2rem;
+            }
+            
+            .luxury-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .auth-button-luxury {
+                padding: 20px 30px;
+                font-size: 1.3rem;
+                min-width: 250px;
+            }
+            
+            .qr-display {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .info-card-luxury {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 豪华动态背景 -->
+    <div class="luxury-bg" id="luxuryBg">
+        <div class="bg-gradient-luxe"></div>
+        <div class="particle-field" id="particleField"></div>
+        <!-- 添加多个全息线条 -->
+        <div class="holographic-line" style="top: 20%; animation-delay: 0s;"></div>
+        <div class="holographic-line" style="top: 40%; animation-delay: 2s;"></div>
+        <div class="holographic-line" style="top: 60%; animation-delay: 4s;"></div>
+        <div class="holographic-line" style="top: 80%; animation-delay: 6s;"></div>
+        <!-- 添加漂浮水晶 -->
+        <div class="floating-crystal" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
+        <div class="floating-crystal" style="top: 70%; left: 80%; animation-delay: 5s;"></div>
+        <div class="floating-crystal" style="top: 30%; left: 85%; animation-delay: 10s;"></div>
+        <div class="floating-crystal" style="top: 85%; left: 20%; animation-delay: 15s;"></div>
+    </div>
+    
+    <!-- 主容器 -->
+    <div class="luxury-container">
+        <!-- 顶部区域 -->
+        <header class="luxury-header">
+            <div class="brand-area">
+                <div class="brand-icon">
+                    <i class="fas fa-microphone-alt"></i>
+                </div>
+                <div class="brand-text">
+                    <h1 class="luxury-title">唐潮国际KTV</h1>
+                    <p class="luxury-subtitle">U86娱乐综合盘</p>
+                    <p class="tagline neon-blue">实力背书 信誉保障 | U86国际娱乐</p>
+                </div>
+            </div>
+        
+        <!-- 主要内容区域 -->
+        <main class="luxury-content">
+            <!-- 左侧认证交互区域 -->
+            <section class="auth-interactive">
+                <!-- 二维码区域 -->
+                <div class="glass-effect qr-luxury">
+                    <h2 class="qr-title-main neon-text">无需下载 无需注册</h2>
+                    
+                    <div class="qr-display">
+                        <div class="qr-pattern"></div>
+                        <div class="qr-overlay-text">U86</div>
+                    </div>
+                    
+                    <p class="qr-instruction">使用手机相机扫描二维码，立即体验</p>
+                </div>
+                
+                <!-- 一键认证按钮 -->
+                <div class="auth-luxury">
+                    <a href="tg://resolve?domain=U86ktv" id="authLink" class="auth-button-luxury">
+                        <i class="fas fa-bolt button-icon"></i>
+                        <span>一键认证上网</span>
+                    </a>
+                    <p class="button-note">点击立即连接网络，认证成功自动跳转Telegram</p>
+                </div>
+            </section>
+            
+            <!-- 右侧信息展示区域 -->
+            <section class="info-luxury">
+                <!-- 新人首存卡片 -->
+                <article class="glass-effect info-card-luxury">
+                    <div class="card-header-luxury">
+                        <div class="card-icon-luxury">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="card-title-luxury">新人首存</h3>
+                    </div>
+                    
+                    <div class="card-content-luxury">
+                        <div class="bonus-item-luxury">
+                            <span>100送38</span>
+                            <span class="bonus-value-luxury">最高赠送18888U</span>
+                        </div>
+                        <div class="bonus-item-luxury">
+                            <span>每日首存300+送25%</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- 游戏玩法卡片 -->
+                <article class="glass-effect info-card-luxury">
+                    <div class="card-header-luxury">
+                        <div class="card-icon-luxury">
+                            <i class="fas fa-dice"></i>
+                        </div>
+                        <h3 class="card-title-luxury">游戏玩法</h3>
+                    </div>
+                    
+                    <div class="card-content-luxury">
+                        <ul class="game-list-luxury">
+                            <li>德信百家乐</li>
+                            <li>PG电子转转</li>
+                            <li>港澳六合彩</li>
+                            <li>加拿大28</li>
+                            <li>CP彩票</li>
+                            <li>3D电子捕鱼</li>
+                        </ul>
+                    </div>
+                </article>
+                
+                <!-- 资金安全卡片 -->
+                <article class="glass-effect info-card-luxury">
+                    <div class="card-header-luxury">
+                        <div class="card-icon-luxury">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="card-title-luxury">资金安全</h3>
+                    </div>
+                    
+                    <div class="card-content-luxury">
+                        <div class="security-feature-luxury">
+                            <i class="fas fa-check-circle security-icon-luxury"></i>
+                            <div>
+                                <h4 class="neon-blue">实力雄厚</h4>
+                                <p>多重加密保障资金安全</p>
+                            </div>
+                        </div>
+                        <div class="security-feature-luxury">
+                            <i class="fas fa-lock security-icon-luxury"></i>
+                            <div>
+                                <h4 class="neon-blue">交易加密</h4>
+                                <p>银行级别安全防护</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- 联营单位卡片 -->
+                <article class="glass-effect info-card-luxury">
+                    <div class="card-header-luxury">
+                        <div class="card-icon-luxury">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="card-title-luxury">联营单位</h3>
+                    </div>
+                    
+                    <div class="card-content-luxury">
+                        <ul class="partner-list-luxury">
+                            <li>金边宝马汇</li>
+                            <li>戈公唐潮国际</li>
+                            <li>手佳集团</li>
+                            <li>西港丽豪赌场</li>
+                            <li>西港丽豪酒店</li>
+                        </ul>
+                        <p class="note-text-luxury">以上联营单位可线下预约存取</p>
+                    </div>
+                </article>
+            </section>
+        </main>
+        
+        <!-- 底部区域 -->
+        <footer class="luxury-footer">
+            <div class="footer-links-luxury">
+                <a href="#">关于我们</a>
+                <a href="#">服务条款</a>
+                <a href="#">隐私政策</a>
+                <a href="#">帮助中心</a>
+            </div>
+            <p>本页面为模拟展示页面 | 实际内容以官方信息为准</p>
+            <p class="copyright">&copy; 2025 唐潮国际KTV · U86娱乐综合盘 版权所有</p>
+        </footer>
+    </div>
+
+    <script>
+        // 创建动态粒子背景
+        function createLuxuryParticles() {
+            const particleField = document.getElementById('particleField');
+            const particleCount = 80;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const spark = document.createElement('div');
+                spark.classList.add('spark');
+                
+                // 随机大小
+                const size = Math.random() * 4 + 1;
+                spark.style.width = `${size}px`;
+                spark.style.height = `${size}px`;
+                
+                // 随机位置
+                spark.style.left = `${Math.random() * 100}%`;
+                spark.style.top = `${Math.random() * 100}%`;
+                
+                // 随机颜色
+                const colors = ['#FFD700', '#00D4FF', '#FF00AA', '#FFFFFF'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                spark.style.backgroundColor = color;
+                spark.style.boxShadow = `0 0 10px 2px ${color}`;
+                
+                // 随机动画延迟和持续时间
+                spark.style.animationDelay = `${Math.random() * 2}s`;
+                spark.style.animationDuration = `${Math.random() * 1 + 1}s`;
+                
+                particleField.appendChild(spark);
+            }
+        }
+        
+        // 模拟一键认证并跳转到Telegram
+        function handleAuthClick(e) {
+            e.preventDefault();
+            
+            const authLink = document.getElementById('authLink');
+            const statusIndicator = document.getElementById('statusIndicator');
+            const statusText = document.getElementById('statusText');
+            
+            // 显示认证中状态
+            statusText.textContent = '认证中...';
+            statusIndicator.style.backgroundColor = '#FFA500';
+            
+            // 模拟短暂的认证过程（实际由路由器完成）
+            setTimeout(() => {
+                // 更新状态为已连接
+                statusIndicator.classList.add('connected');
+                statusText.textContent = '已连接网络';
+                statusText.style.color = '#00FF7F';
+                
+                // 实际跳转到Telegram（路由器后台配置的链接）
+                // 这里直接使用tg://协议，如果未安装Telegram会打开应用商店
+                window.location.href = authLink.href;
+                
+                // 如果跳转失败，3秒后提示
+                setTimeout(() => {
+                    if (document.hasFocus()) {
+                        alert('跳转失败，请确保已安装Telegram或检查链接配置');
+                    }
+                }, 3000);
+                
+            }, 800);
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            createLuxuryParticles();
+            
+            // 绑定认证按钮事件
+            const authLink = document.getElementById('authLink');
+            authLink.addEventListener('click', handleAuthClick);
+            
+            // 添加卡片悬停效果
+            const cards = document.querySelectorAll('.info-card-luxury');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.4)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+            
+            // 添加二维码悬停效果
+            const qrDisplay = document.querySelector('.qr-display');
+            qrDisplay.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.03)';
+            });
+            
+            qrDisplay.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+            
+            // 自动连接检测（模拟路由器环境）
+            setTimeout(() => {
+                const statusIndicator = document.getElementById('statusIndicator');
+                const statusText = document.getElementById('statusText');
+                
+                // 模拟网络检测
+                if (Math.random() > 0.2) { // 80%几率显示已连接
+                    statusIndicator.classList.add('connected');
+                    statusText.textContent = '已连接网络';
+                    statusText.style.color = '#00FF7F';
+                }
+            }, 1000);
+        });
+        
+        // 添加页面加载动画
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.8s';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
